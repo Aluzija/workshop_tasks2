@@ -5,7 +5,7 @@ class Task < ApplicationRecord
   private
 
   def deadline_is_date?
-    if !deadline.is_a?(Date)
+    unless deadline.is_a?(Date)
       errors.add(:deadline, 'must be in a format of YYYY-MM-DD')
     end
   end
